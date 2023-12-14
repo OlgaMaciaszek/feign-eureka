@@ -4,7 +4,6 @@ import java.util.Date;
 
 import demo.clients.HelloClient;
 import demo.dto.InputDto;
-import jakarta.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -30,7 +29,7 @@ public class HelloClientApplication {
 
 	@RequestMapping("/")
 	public String hello() {
-		return client.hello("Test");
+		return client.hello();
 	}
 
 	@GetMapping("/date")
