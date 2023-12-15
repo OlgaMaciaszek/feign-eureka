@@ -20,7 +20,7 @@ public interface HelloClient {
 	@RequestMapping(value = "/", method = GET)
 	String hello();
 
-	@PostMapping("/test")
-	ResponseEntity<InputDto> test(@RequestBody InputDto searchDto);
+	@PostMapping("/date")
+	ResponseEntity<InputDto> date(@RequestBody InputDto searchDto);
 
 }
