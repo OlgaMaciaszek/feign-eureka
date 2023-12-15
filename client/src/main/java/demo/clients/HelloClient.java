@@ -1,5 +1,6 @@
 package demo.clients;
 
+import demo.config.CustomConfig;
 import demo.dto.InputDto;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -13,13 +14,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 /**
  * @author Olga Maciaszek-Sharma
  */
-@FeignClient("HelloServer")
+@FeignClient(value = "HelloServer", configuration = CustomConfig.class)
 public interface HelloClient {
 
 	@RequestMapping(value = "/", method = GET)
 	String hello();
 
-	@PostMapping("/date")
-	ResponseEntity<InputDto> date(@RequestBody InputDto searchDto);
+	@PostMapping("/test")
+	ResponseEntity<InputDto> test(@RequestBody InputDto searchDto);
 
 }

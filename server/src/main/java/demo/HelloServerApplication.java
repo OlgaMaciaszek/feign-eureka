@@ -34,11 +34,12 @@ public class HelloServerApplication {
 				.get(new Random().nextInt(instances.size()));
 		return "Hello World: " + selectedInstance.getServiceId() + ":" + selectedInstance
 				.getHost() + ":" + selectedInstance.getPort();
-	}
+	}\
 
 	@PostMapping("/date")
 	ResponseEntity<InputDto> date(@RequestBody InputDto inputDto) {
-		return ResponseEntity.ok(inputDto);
+//		return ResponseEntity.ok(inputDto);
+		return ResponseEntity.unprocessableEntity().build();
 	}
 
 	public static void main(String[] args) {
