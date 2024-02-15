@@ -2,22 +2,16 @@ package demo.clients;
 
 import java.beans.ConstructorProperties;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-
 /**
  * @author Olga Maciaszek-Sharma
  */
-@FeignClient(value = "HelloServer")
+//@FeignClient(value = "HelloServer")
 public interface HelloClient {
 
-	@RequestMapping(value = "/", method = GET)
+	//	@RequestMapping(value = "/", method = GET)
 	String hello();
 
-	@GetMapping("/play-value")
+	//	@GetMapping("/play-value")
 	PlayResponseValue playValue();
 
 	class PlayResponseValue {
